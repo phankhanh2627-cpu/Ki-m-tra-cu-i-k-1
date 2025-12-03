@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực Phẩm Bổ Trợ - Thông Tin Tập Gym</title>
+    <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Member card and modal styles */
+        .member-section { max-width:900px; margin:0 auto; padding:1rem; }
+        .member-card { border:1px solid #ff5858; padding:1rem; margin-bottom:1rem; border-radius:8px; transition:all .25s ease; cursor:pointer; background:linear-gradient(135deg, rgba(255,88,88,0.02), rgba(0,0,0,0.02)); }
+        .member-card:hover { box-shadow:0 8px 24px rgba(255,88,88,0.1); transform:translateY(-2px); border-color:#28bebb; }
+        .member-header { display:flex; align-items:center; gap:1rem; }
+        .member-image { width:80px; height:80px; object-fit:cover; border-radius:50%; }
+        .member-details { display:none; margin-top:0.75rem; color:#e0e0e0; }
+       
+        /* Modal styles */
+        .modal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:1000; align-items:center; justify-content:center; }
+        .modal.open { display:flex; }
+        .modal-content { background:#282828; border:1px solid #ff5858; border-radius:12px; padding:2rem; max-width:600px; max-height:80vh; overflow-y:auto; box-shadow:0 8px 32px rgba(0,0,0,0.5); position:relative; }
+        .modal-header { display:flex; flex-direction:column; align-items:center; gap:1rem; margin-bottom:1.5rem; text-align:center; }
+        .modal-image { width:120px; height:120px; object-fit:cover; border-radius:50%; border:2px solid #ff5858; }
+        .modal-title { margin:0; color:#ff5858; font-size:1.5em; }
+        .modal-body { color:#e8e8e8; line-height:1.6; }
+        .modal-body p { margin:0.75rem 0; }
+        .modal-body strong { color:#ffdede; }
+        .modal-close { position:absolute; top:1rem; right:1rem; background:none; border:none; color:#ff5858; font-size:1.8em; cursor:pointer; transition:color 0.2s; }
+        .modal-close:hover { color:#ff8b8b; }
+        @media (max-width: 600px) {
+            .modal-content { max-width:90%; max-height:90vh; padding:1.5rem; }
+            .modal-header { flex-direction:column; text-align:center; }
+        }
+    </style>
+   
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loader-overlay" id="loaderOverlay">
+        <div class="dumbbell-loader">
+            <div class="weight-left"></div>
+            <div class="bar"></div>
+            <div class="weight-right"></div>
+        </div>
+        <div class="loader-text">
+            <h2>LOADING</h2>
+            <p>Chuẩn bị cho buổi tập của bạn...</p>
+        </div>
+    </div>
+
+
+
+
+    <header>
+        <h1>GYMSHARE</h1>
+            <p class="subtitle">Thực chiến, an toàn và khoa học — Lộ trình cho người mới và nâng cao</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Trang Chủ</a></li>
+            <li><a href="gioithieu.html">Giới thiệu</a></li>
+            <li><a href="baitap.html">Bài Tập</a></li>
+            <li><a href="dungcu.html">Dụng Cụ</a></li>
+            <li><a href="tpbs.html">Thực Phẩm Bổ Trợ</a></li>
+            <li><a href="tacgia.html" class="active">Tác giả</a></li>
+        </ul>
+    </nav>
+  <div class="container">
+        <section class="exercises">
+            <h2>Giới Thiệu Thành Viên</h2>
+
+
+
+
+            <!-- Modal for member 1 -->
+            <div class="modal" id="modal-minh">
+                <div class="modal-content">
+                    <button class="modal-close" onclick="closeModal('modal-minh')">&times;</button>
+                    <div class="modal-header">
+                        <img src="https://via.placeholder.com/150/007bff/ffffff?text=Minh" alt="Phạm Gia Minh" class="modal-image">
+                        <h2 class="modal-title">Phạm Gia Minh</h2>
+                    </div>
+                    <div class="modal-body">
+                        <p><strong>Giới thiệu bản thân:</strong></p>
+                        <p>Phạm Gia Minh là một người đam mê thể hình với hơn 1 năm kinh nghiệm. Anh ấy chuyên về luyện tập sức mạnh và dinh dưỡng thể thao. Minh tin rằng một lối sống lành mạnh là chìa khóa để đạt được tiềm năng tối đa, không chỉ về thể chất mà còn về tinh thần. Anh ấy luôn tìm cách kết hợp các phương pháp tập luyện mới nhất với kiến thức khoa học để mang lại hiệu quả bền vững.</p>
+                        <p><strong>Mục tiêu:</strong> Chia sẻ kiến thức và truyền cảm hứng cho mọi người trên hành trình tập luyện của họ, giúp họ khám phá tiềm năng sức mạnh bên trong và đạt được vóc dáng mơ ước.</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!-- Modal for member 2 -->
+            <div class="modal" id="modal-khanh">
+                <div class="modal-content">
+                    <button class="modal-close" onclick="closeModal('modal-khanh')">&times;</button>
+                    <div class="modal-header">
+                        <img src="./588230889_1918471082418254_8651497140199499935_n.jpg" alt="Phan Minh Khánh" class="modal-image">
+                        <h2 class="modal-title">Phan Minh Khánh</h2>
+                    </div>
+                    <div class="modal-body">
+                        <p><strong>Giới thiệu bản thân:</strong></p>
+                        <p>Phan Minh Khánh, một gym bro với hơn 1 năm kinh nghiệm với trường phái old school và tập hết sức mình. Mỗi buổi tập với anh ấy sẽ đưa bạn đến giới hạn cuối cùng của bản thân. Với quan điểm “ giới hạn duy nhất của tao là LIM” thì anh ấy coi gym là một cách cải thiện bản thân thú vị</p>
+                        <p><strong>Mục tiêu:</strong> Nói chuyện được với bạn ngồi bàn số 15.</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!-- Member cards (clickable) -->
+            <div class="member-card" onclick="openModal('modal-minh')">
+                <div class="member-header">
+                    <img src="https://via.placeholder.com/150/007bff/ffffff?text=Minh" alt="Phạm Gia Minh" class="member-image">
+
+
+
+
+                    <h3>Phạm Gia Minh</h3>
+                </div>
+                <p style="color:#b0b0b0; margin:0; font-size:0.9em;">Click để xem chi tiết</p>
+            </div>
+
+
+
+
+            <div class="member-card" onclick="openModal('modal-khanh')">
+                <div class="member-header">
+                    <img src="./588230889_1918471082418254_8651497140199499935_n.jpg" alt="Phan Minh Khánh" class="member-image">
+                    <h3>Phan Minh Khánh</h3>
+                </div>
+                <p style="color:#b0b0b0; margin:0; font-size:0.9em;">Click để xem chi tiết</p>
+            </div>
+
+
+
+
+        </section>
+
+
+
+
+       
+
+
+
+
+    </main>
+    <footer>
+        <p>&copy; 2025 GymShare. All rights reserved.</p>
+    </footer>
+    <script>
+        (function() {
+            const imageInput = document.getElementById('imageInput');
+            const previewImg = document.getElementById('previewImg');
+            const previewText = document.getElementById('previewText');
+            const imageUploadForm = document.getElementById('imageUploadForm');
+            const memberSelect = document.getElementById('memberSelect');
+
+
+            // Image upload preview (only attach if element exists)
+            if (imageInput) {
+                imageInput.addEventListener('change', function(e) {
+                    const file = e.target.files && e.target.files[0];
+                    if (file) {
+                        const reader = new FileReader();
+                        reader.onload = function(event) {
+                            if (previewImg) {
+                                previewImg.src = event.target.result;
+                                previewImg.style.display = 'block';
+                            }
+                            if (previewText) previewText.style.display = 'none';
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                });
+            }
+
+
+            // Safe updateMemberImage exposed globally
+            window.updateMemberImage = function() {
+                const imageInputEl = document.getElementById('imageInput');
+                const memberSelectEl = document.getElementById('memberSelect');
+                const modalImages = document.querySelectorAll('.modal-image');
+                const cardImages = document.querySelectorAll('.member-image');
+
+
+                if (!imageInputEl || !memberSelectEl) {
+                    alert('Không có form tải ảnh trên trang này.');
+                    return;
+                }
+
+
+                const file = imageInputEl.files && imageInputEl.files[0];
+                if (!file) {
+                    alert('Vui lòng chọn hình ảnh trước');
+                    return;
+                }
+
+
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const selectedMember = memberSelectEl.value;
+
+
+                    if (selectedMember === 'modal-minh') {
+                        if (modalImages[0]) modalImages[0].src = event.target.result;
+                        if (cardImages[0]) cardImages[0].src = event.target.result;
+                    } else if (selectedMember === 'modal-khanh') {
+                        if (modalImages[1]) modalImages[1].src = event.target.result;
+                        if (cardImages[1]) cardImages[1].src = event.target.result;
+                    }
+
+
+                    alert('Hình ảnh đã được cập nhật thành công!');
+                    if (imageUploadForm) imageUploadForm.reset();
+                    if (previewImg) previewImg.style.display = 'none';
+                    if (previewText) previewText.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            };
+
+
+            // Modal popup functions (safe)
+            window.openModal = function(modalId) {
+                const el = document.getElementById(modalId);
+                if (el) el.classList.add('open');
+            };
+
+
+            window.closeModal = function(modalId) {
+                const el = document.getElementById(modalId);
+                if (el) el.classList.remove('open');
+            };
+
+
+            // Close modal when clicking outside the content
+            window.addEventListener('click', function(event) {
+                if (event.target && event.target.classList && event.target.classList.contains('modal')) {
+                    event.target.classList.remove('open');
+                }
+            });
+        })();
+    </script>
+   
+    <script>
+        // Hide loader after page fully loads
+        window.addEventListener('load', function() {
+            const loader = document.getElementById('loaderOverlay');
+            setTimeout(function() {
+                loader.classList.add('hidden');
+            }, 800); // Fade out after 800ms delay
+        });
+       
+        // Also hide loader if page is already loaded (for cached pages)
+        if (document.readyState === 'complete') {
+            document.getElementById('loaderOverlay').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

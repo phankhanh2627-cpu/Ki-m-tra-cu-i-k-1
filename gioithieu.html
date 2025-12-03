@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới Thiệu - Thông Tin Tập Gym</title>
+    <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+
+
+    <div class="loader-overlay" id="loaderOverlay">
+        <div class="dumbbell-loader">
+            <div class="weight-left"></div>
+            <div class="bar"></div>
+            <div class="weight-right"></div>
+        </div>
+        <div class="loader-text">
+            <h2>LOADING</h2>
+            <p>Chuẩn bị cho buổi tập của bạn...</p>
+        </div>
+    </div>
+
+
+
+
+    <header>
+        <h1>GYMSHARE</h1>
+            <p class="subtitle">Thực chiến, an toàn và khoa học — Lộ trình cho người mới và nâng cao</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Trang Chủ</a></li>
+            <li><a href="gioithieu.html" class="active">Giới thiệu</a></li>
+            <li><a href="baitap.html">Bài Tập</a></li>
+            <li><a href="dungcu.html">Dụng Cụ</a></li>
+            <li><a href="tpbs.html">Thực Phẩm Bổ Trợ</a></li>
+            <li><a href="tacgia.html">Tác giả</a></li>
+        </ul>
+    </nav>
+  <div class="container">
+        <section class="exercises">
+            <h2>Giới Thiệu Về Chúng Tôi</h2>
+            <p>Chào mừng bạn đến với trang web Thông Tin Tập Gym, nơi cung cấp những kiến thức toàn diện và đáng tin cậy về hành trình tập luyện của bạn.</p>
+            <p>Chúng tôi hiểu rằng việc bắt đầu hoặc duy trì một lối sống năng động có thể đầy thử thách, và đó là lý do tại sao chúng tôi ở đây để hỗ trợ bạn từng bước một.</p>
+            <h3>Sứ Mệnh Của Chúng Tôi</h3>
+            <ul>
+                <li>Cung cấp thông tin chính xác và cập nhật về các bài tập, kỹ thuật và phương pháp tập luyện hiệu quả.</li>
+                <li>Giới thiệu các loại dụng cụ gym phù hợp với mọi cấp độ và mục tiêu.</li>
+                <li>Hướng dẫn về chế độ dinh dưỡng và thực phẩm bổ sung cần thiết để tối ưu hóa kết quả.</li>
+                <li>Xây dựng một cộng đồng những người đam mê gym, chia sẻ kinh nghiệm và động lực.</li>
+            </ul>
+            <p>Hãy cùng chúng tôi khám phá tiềm năng của bạn và đạt được mục tiêu thể hình mong muốn!</p>
+
+
+
+
+
+
+
+
+            <h3>
+<ul> </ul>
+
+
+
+
+
+
+
+
+               
+            </h3>
+            <section class="signup-section">
+                <div class="signup-box">
+                    <h2>Đăng ký nhận tin và lộ trình</h2>
+                    <p class="signup-note">Nhận lộ trình tập luyện, mẹo dinh dưỡng và tin tức mới nhất từ GYMSHARE.</p>
+                    <form id="signupForm" class="signup-form" novalidate>
+                        <div>
+                            <label for="fullName">Họ và tên</label>
+                            <input type="text" id="fullName" name="fullName" required placeholder="Nguyễn Văn A">
+                        </div>
+                        <div>
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required placeholder="email@domain.com">
+                        </div>
+                        <div>
+                            <label for="password">Mật khẩu</label>
+                            <input type="password" id="password" name="password" required minlength="6" placeholder="Ít nhất 6 ký tự">
+                        </div>
+                        <div>
+                            <label for="confirmPassword">Xác nhận mật khẩu</label>
+                            <input type="password" id="confirmPassword" name="confirmPassword" required minlength="6" placeholder="Nhập lại mật khẩu">
+                        </div>
+                        <div class="full">
+                            <label for="interest">Bạn quan tâm tới</label>
+                            <select id="interest" name="interest">
+                                <option value="general">Tổng quan & Lộ trình</option>
+                                <option value="strength">Sức mạnh</option>
+                                <option value="hypertrophy">Tăng cơ</option>
+                                <option value="fatloss">Giảm mỡ</option>
+                                <option value="nutrition">Dinh dưỡng</option>
+                            </select>
+                        </div>
+                        <div class="full signup-actions">
+                            <button type="submit" class="signup-btn">Đăng Ký</button>
+                            <button type="button" class="signup-cancel" onclick="document.getElementById('signupForm').reset();">Hủy</button>
+                        </div>
+                        <div id="signupSuccess" class="signup-success">Cảm ơn! Bạn đã đăng ký thành công. Kiểm tra email để xác nhận (giả lập).</div>
+                    </form>
+                </div>
+            </section>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 GymShare. All rights reserved.</p>
+    </footer>
+   
+    <script>
+
+
+        window.addEventListener('load', function() {
+            const loader = document.getElementById('loaderOverlay');
+            setTimeout(function() {
+                loader.classList.add('hidden');
+            }, 800);
+        });
+
+
+        if (document.readyState === 'complete') {
+            document.getElementById('loaderOverlay').classList.add('hidden');
+        }
+    </script>
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('fullName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const pass = document.getElementById('password').value;
+            const confirm = document.getElementById('confirmPassword').value;
+            const successEl = document.getElementById('signupSuccess');
+
+
+
+
+            if (!name || !email || !pass || !confirm) {
+                alert('Vui lòng điền đầy đủ thông tin.');
+                return;
+            }
+
+
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                alert('Vui lòng nhập email hợp lệ.');
+                return;
+            }
+            if (pass.length < 6) {
+                alert('Mật khẩu phải có ít nhất 6 ký tự.');
+                return;
+            }
+            if (pass !== confirm) {
+                alert('Mật khẩu và xác nhận không khớp.');
+                return;
+            }
+
+
+
+
+
+
+            successEl.style.display = 'block';
+
+
+            setTimeout(function() {
+                document.getElementById('signupForm').reset();
+            }, 800);
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
